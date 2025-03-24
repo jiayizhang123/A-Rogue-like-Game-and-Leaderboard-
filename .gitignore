@@ -13,3 +13,30 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# ----------------------------
+# Python 
+# ----------------------------
+# Virtual environment
+venv/
+.env/
+.env[Local]/
+.python-version
+
+# compile and cache
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# log and temp files
+*.log
+*.tmp
+*.sqlite
+
+# testing
+.coverage
+htmlcov/
+.pytest_cache/
