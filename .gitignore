@@ -25,6 +25,7 @@ venv/
 
 #Pycharm
 .idea/
+.venv/
 
 # compile and cache
 __pycache__/
