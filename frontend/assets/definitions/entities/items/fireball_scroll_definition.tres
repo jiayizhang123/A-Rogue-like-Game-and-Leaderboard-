@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://dp14tnq7fgb2b"]
+
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/fireball_damage_consumable_component_definition.gd" id="1_4v7n7"]
+[ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_bw6j4"]
+[ext_resource type="Texture2D" uid="uid://cxb43njn6m6b" path="res://assets/images/Ribbon_Red_Connection_Up.png" id="3_vulxp"]
+
+[sub_resource type="Resource" id="Resource_pntss"]
+script = ExtResource("1_4v7n7")
+damage = 12
+radius = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpfos"]
+atlas = ExtResource("3_vulxp")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lj6r0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpfos")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_bw6j4")
+name = "Fireball Scroll"
+spriteframe = SubResource("SpriteFrames_lj6r0")
+color = Color(1, 0, 0, 1)
+is_blocking_movment = false
+type = 1
+ai_type = 0
+item_definition = SubResource("Resource_pntss")
+inventory_capacity = 0
+has_equipment = false

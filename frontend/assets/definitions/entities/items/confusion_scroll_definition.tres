@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=5 format=3 uid="uid://slhqhjrgsvvn"]
+
+[ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_7c6k3"]
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/confusion_consumable_component_definition.gd" id="1_pyxgx"]
+
+[sub_resource type="Resource" id="Resource_jjly5"]
+script = ExtResource("1_pyxgx")
+number_of_turns = 10
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oq67l"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_7c6k3")
+name = "Confusion Scroll"
+spriteframe = SubResource("SpriteFrames_oq67l")
+color = Color(0.811765, 0.247059, 1, 1)
+is_blocking_movment = false
+type = 1
+ai_type = 0
+item_definition = SubResource("Resource_jjly5")
+inventory_capacity = 0
+has_equipment = false

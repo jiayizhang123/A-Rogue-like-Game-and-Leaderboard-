@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://cisr62q1guj2h"]
+
+[ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_50k7b"]
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/equippable_component_definition.gd" id="1_je5rl"]
+[ext_resource type="Texture2D" uid="uid://b8onhfci0i3wn" path="res://assets/images/06.png" id="3_dr0y4"]
+
+[sub_resource type="Resource" id="Resource_y1wfj"]
+script = ExtResource("1_je5rl")
+equipment_type = 0
+power_bonus = 2
+defense_bonus = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5u7y"]
+atlas = ExtResource("3_dr0y4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_656b1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5u7y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_50k7b")
+name = "Dagger"
+spriteframe = SubResource("SpriteFrames_656b1")
+color = Color(0.498039, 0.498039, 0.498039, 1)
+is_blocking_movment = false
+type = 1
+ai_type = 0
+item_definition = SubResource("Resource_y1wfj")
+inventory_capacity = 0
+has_equipment = false

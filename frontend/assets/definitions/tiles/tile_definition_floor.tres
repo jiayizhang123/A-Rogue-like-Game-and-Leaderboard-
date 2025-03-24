@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TileDefinition" load_steps=4 format=3 uid="uid://smscudi5o3ly"]
+
+[ext_resource type="Script" path="res://src/Map/tile_definition.gd" id="1_78gdy"]
+[ext_resource type="Texture2D" uid="uid://btx1428nl0bmi" path="res://assets/images/grass.png" id="2_xonfs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfxfk"]
+atlas = ExtResource("2_xonfs")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_78gdy")
+texture = SubResource("AtlasTexture_vfxfk")
+color_lit = Color(1, 1, 1, 1)
+color_dark = Color(0.498039, 0.247059, 0, 1)
+is_walkable = true
+is_transparent = true

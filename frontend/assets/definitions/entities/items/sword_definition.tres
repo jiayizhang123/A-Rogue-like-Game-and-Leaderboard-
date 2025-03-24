@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://c66c85iyfqobw"]
+
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/equippable_component_definition.gd" id="1_061hq"]
+[ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_s5e6y"]
+[ext_resource type="Texture2D" uid="uid://2gqlu72hypkt" path="res://assets/images/12.png" id="3_pnmpc"]
+
+[sub_resource type="Resource" id="Resource_bm3ah"]
+script = ExtResource("1_061hq")
+equipment_type = 0
+power_bonus = 4
+defense_bonus = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdhoe"]
+atlas = ExtResource("3_pnmpc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g5c2j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdhoe")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_s5e6y")
+name = "Sword"
+spriteframe = SubResource("SpriteFrames_g5c2j")
+color = Color(0.498039, 0.498039, 0.498039, 1)
+is_blocking_movment = false
+type = 1
+ai_type = 0
+item_definition = SubResource("Resource_bm3ah")
+inventory_capacity = 0
+has_equipment = false

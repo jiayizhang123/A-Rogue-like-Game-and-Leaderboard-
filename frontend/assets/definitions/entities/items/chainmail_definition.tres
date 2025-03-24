@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://ckwdkjwfq53rp"]
+
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/equippable_component_definition.gd" id="1_4lksx"]
+[ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_a8epg"]
+[ext_resource type="Texture2D" uid="uid://d2clkafw4ht1" path="res://assets/images/11.png" id="3_5687q"]
+
+[sub_resource type="Resource" id="Resource_pyqci"]
+script = ExtResource("1_4lksx")
+equipment_type = 1
+power_bonus = 0
+defense_bonus = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bguq"]
+atlas = ExtResource("3_5687q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r35e0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bguq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_a8epg")
+name = "Chain Mail"
+spriteframe = SubResource("SpriteFrames_r35e0")
+color = Color(0.498039, 0.498039, 0.498039, 1)
+is_blocking_movment = false
+type = 1
+ai_type = 0
+item_definition = SubResource("Resource_pyqci")
+inventory_capacity = 0
+has_equipment = false

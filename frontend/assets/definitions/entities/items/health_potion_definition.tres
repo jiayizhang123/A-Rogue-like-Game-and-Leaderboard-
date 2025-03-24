@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://bih3ojvm3r78e"]
+
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/healing_consumable_component_definition.gd" id="1_c0mne"]
+[ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_e3smu"]
+[ext_resource type="Texture2D" uid="uid://d1es4dpogtxvx" path="res://assets/images/G_Idle.png" id="3_p54af"]
+
+[sub_resource type="Resource" id="Resource_leey2"]
+script = ExtResource("1_c0mne")
+healing_amount = 4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt87f"]
+atlas = ExtResource("3_p54af")
+region = Rect2(0, 0, 28, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxcak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt87f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_e3smu")
+name = "Health Potion"
+spriteframe = SubResource("SpriteFrames_cxcak")
+color = Color(0.498039, 0, 1, 1)
+is_blocking_movment = false
+type = 1
+ai_type = 0
+item_definition = SubResource("Resource_leey2")
+inventory_capacity = 0
+has_equipment = false

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% if title %}
+    <title>{{ title }} - Roguelike game Leaderboard</title>
+    {% else %}
+    <title>Roguelike game Leaderoard</title>
+    {% endif %}
+    <!-- Font Awesome -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/all.css') }}">
+    
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static',filename='styles/bootstrap.min.css') }}" rel="stylesheet">
+    
+    <!-- Material Design Bootstrap -->
+    <link href="{{ url_for('static',filename='styles/mdb.min.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">Leader Board</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('register_page') }}">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br />
+    <br />
+    <div class="jumbotron" style="background:#36771f;color:#fff">
+        <div class="container">
+            <h2 class="display-3">Registration Form</h2>
+
+            <form class="form-inline my-2 my-lg-0" method="POST" action="/register" style="color:#fff" novalidate>
+                {{ reg_form.hidden_tag() }}
+                <div class="col">
+                    <div class="mr-sm-2 ">
+                        {{ reg_form.username(size=32) }}
+                        {% for error in reg_form.username.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+
+                        {{ reg_form.password(size=32) }}
+                        {% for error in reg_form.password.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+
+                        {{ reg_form.submit() }}
+                    </div>
+                    <h3>{{ registration_status }}</h3>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>

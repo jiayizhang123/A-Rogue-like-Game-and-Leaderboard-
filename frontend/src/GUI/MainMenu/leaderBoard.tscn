@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgc3d8yesoput"]
+
+[ext_resource type="Script" path="res://src/GUI/MainMenu/leader_board.gd" id="1_cjxpy"]
+[ext_resource type="Texture2D" uid="uid://h7i8uiwlysq2" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_qyqar"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7j4i"]
+atlas = ExtResource("2_qyqar")
+region = Rect2(768, 336, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gur0a"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+texture = SubResource("AtlasTexture_q7j4i")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_spck6"]
+color = Color(1, 1, 1, 1)
+
+[node name="LeaderBoard" type="CanvasLayer"]
+script = ExtResource("1_cjxpy")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_direction = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(800, 500)
+layout_direction = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gur0a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Leader Board"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nav" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ScoresLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Nav"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "< Scores >"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_spck6")
+
+[node name="ScoreList" type="Tree" parent="CenterContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+columns = 4
+column_titles_visible = true
+allow_search = false
+hide_folding = true
+hide_root = true
+select_mode = 1
+
+[node name="info_board" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+horizontal_alignment = 1
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 927.0
+offset_top = 74.0
+offset_right = 971.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 20
+text = "X"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
