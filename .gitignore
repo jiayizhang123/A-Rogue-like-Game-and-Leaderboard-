@@ -23,6 +23,9 @@ venv/
 .env[Local]/
 .python-version
 
+#Pycharm
+.idea/
+
 # compile and cache
 __pycache__/
 *.py[cod]
