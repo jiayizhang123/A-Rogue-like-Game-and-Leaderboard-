@@ -25,8 +25,12 @@ func get_action(player: Entity) -> Action:
 
 
 func transition_to(input_handler: InputHandlers) -> void:
-	%CanvasLayer.hide()
+	if %CanvasLayer.visible:
+		%CanvasLayer.hide()
+	else:
+		%CanvasLayer.show()
 	if current_input_handler != null:
 		current_input_handler.exit()
 	current_input_handler = input_handler_nodes[input_handler]
 	current_input_handler.enter()
+	
