@@ -1,0 +1,354 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0vv5xltajra0"]
+
+[ext_resource type="Texture2D" uid="uid://d05pvkgtyvutu" path="res://art/menubg.png" id="1_pltpo"]
+[ext_resource type="Script" path="res://scenes/menureal.gd" id="1_rujl7"]
+
+[node name="Control" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_rujl7")
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pltpo")
+region_rect = Rect2(1, 0, 197, 200)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_pltpo")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_pltpo")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -75.0
+offset_bottom = 75.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_pltpo")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -413.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="VBoxContainer3"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "    Resume"
+flat = true
+
+[node name="Button2" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "    Options
+"
+flat = true
+
+[node name="Button3" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "    Abilities"
+flat = true
+
+[node name="Button4" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "    Purchase Upgrades"
+flat = true
+
+[node name="Button5" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "    Leaderboard"
+flat = true
+
+[node name="Button6" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "    Return to Main Menu"
+flat = true
+
+[node name="Button7" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "    Quit Game"
+flat = true
+
+[node name="Button8" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Level 1"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "    Score:"
+
+[node name="Label2" type="Label" parent="VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "                   9999"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer3/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "    Coins:"
+
+[node name="Label" type="Label" parent="VBoxContainer3/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "                   9999"
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 400.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer4"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="VBoxContainer4/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer4/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Controls: KBM"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer4/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Move:"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "W/A/S/D or arrow keys"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer4/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Pause:"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Escape"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer4/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Attack:"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Left click"
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer4/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "MP"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "74/113"
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="VBoxContainer4/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer4/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Controls: Xbox Controller"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer4/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Move:"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Left Analog stick"
+horizontal_alignment = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer4/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Pause:"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Start"
+horizontal_alignment = 1
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer4/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Attack:"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "RT"
+horizontal_alignment = 1
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer4/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "MP"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="VBoxContainer4/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "1842/3000"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer3/Button" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Button2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Button3" to="." method="_on_abilities_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Button4" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Button6" to="." method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Button7" to="." method="_on_quit_pressed"]

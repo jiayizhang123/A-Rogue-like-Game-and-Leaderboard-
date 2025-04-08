@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgtq18k0ges5n"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_aqcxf"]
+[ext_resource type="PackedScene" uid="uid://br6lb1q4nxx5s" path="res://player/player.tscn" id="2_rrjoc"]
+[ext_resource type="PackedScene" uid="uid://db3ipdl3mdq21" path="res://enemies/enemy.tscn" id="4_agm1b"]
+[ext_resource type="PackedScene" uid="uid://d0vv5xltajra0" path="res://scenes/menureal.tscn" id="4_cr3c6"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_aqcxf")
+
+[node name="Player" parent="." instance=ExtResource("2_rrjoc")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_agm1b")]
+position = Vector2(239, 113)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("4_cr3c6")]

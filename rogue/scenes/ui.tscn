@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj6tnu2uy4qec"]
+
+[ext_resource type="Script" path="res://scenes/stats_ui.gd" id="1_caxqw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2uvkd"]
+bg_color = Color(0.317647, 0, 0.00392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kl85m"]
+bg_color = Color(0.741176, 0.121569, 0.113725, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4y2k"]
+bg_color = Color(0.0980392, 0, 0.282353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0t38"]
+bg_color = Color(0, 0.424232, 0.757293, 1)
+
+[node name="MenuUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_caxqw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 288.0
+offset_bottom = 137.0
+
+[node name="hpbox" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="health" type="ProgressBar" parent="VBoxContainer/hpbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_2uvkd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kl85m")
+step = 1.0
+
+[node name="mpbox" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="mana" type="ProgressBar" parent="VBoxContainer/mpbox"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_o4y2k")
+theme_override_styles/fill = SubResource("StyleBoxFlat_t0t38")
+step = 1.0

@@ -1,0 +1,115 @@
+[gd_scene load_steps=19 format=3 uid="uid://br6lb1q4nxx5s"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_mu7x3"]
+[ext_resource type="Texture2D" uid="uid://bandyvtb1cn2e" path="res://art/stagattack.png" id="2_rgyol"]
+[ext_resource type="Texture2D" uid="uid://bcd1ffafevh3c" path="res://art/1definitelyswordguy.png" id="2_x8a4t"]
+[ext_resource type="Texture2D" uid="uid://bylxj0koncb5e" path="res://art/stagmove.png" id="3_0gt4r"]
+[ext_resource type="PackedScene" uid="uid://cyxho6ktxqr3w" path="res://hboxes/hurtbox.tscn" id="3_fpndg"]
+[ext_resource type="Script" path="res://states/state_machine.gd" id="4_12ppc"]
+[ext_resource type="Script" path="res://states/idle.gd" id="5_a5qou"]
+[ext_resource type="Script" path="res://states/move.gd" id="6_7wyid"]
+[ext_resource type="Script" path="res://states/attack.gd" id="9_8twkv"]
+[ext_resource type="PackedScene" uid="uid://bp4gi16kypdsd" path="res://hboxes/hitbox.tscn" id="9_xw7bl"]
+[ext_resource type="PackedScene" uid="uid://cj6tnu2uy4qec" path="res://scenes/ui.tscn" id="11_3x1wn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lahm"]
+size = Vector2(25, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3khut"]
+atlas = ExtResource("2_rgyol")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4syky"]
+atlas = ExtResource("2_rgyol")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co1ge"]
+atlas = ExtResource("3_0gt4r")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlw3v"]
+atlas = ExtResource("3_0gt4r")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmim0"]
+atlas = ExtResource("3_0gt4r")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yilgi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3khut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4syky")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co1ge")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlw3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmim0")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_mu7x3")
+
+[node name="MenuUI" parent="." instance=ExtResource("11_3x1wn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(388.5, 205.5)
+shape = SubResource("RectangleShape2D_8lahm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(389, 200)
+sprite_frames = SubResource("SpriteFrames_yilgi")
+animation = &"attack"
+frame = 1
+frame_progress = 0.465276
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(387, 199)
+texture = ExtResource("2_x8a4t")
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_fpndg")]
+position = Vector2(382, 204)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("4_12ppc")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("5_a5qou")
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource("6_7wyid")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("9_8twkv")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HitboxPivot" type="Marker2D" parent="."]
+position = Vector2(373, 203)
+
+[node name="Hitbox" parent="HitboxPivot" instance=ExtResource("9_xw7bl")]

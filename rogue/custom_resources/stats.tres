@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://qav01irgbq6e"]
+
+[ext_resource type="Script" path="res://custom_resources/stats.gd" id="1_0i60m"]
+
+[resource]
+script = ExtResource("1_0i60m")
+max_health = 100
+max_mana = 100
+max_shield = 50
+attack = 10
+movespeed = 500
+cooldown = 0.5
+can_crit = true
+is_invulnerable = false

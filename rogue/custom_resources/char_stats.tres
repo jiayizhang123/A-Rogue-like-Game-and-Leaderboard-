@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=2 format=3 uid="uid://bskhwwhtrjvf7"]
+
+[ext_resource type="Script" path="res://custom_resources/char_stat.gd" id="1_dih8a"]
+
+[resource]
+script = ExtResource("1_dih8a")
+crit_chance = 0.1
+crit_attack = 1.1
+score_mult = 1.0
+max_health = 100
+max_mana = 100
+max_shield = 50
+attack = 10
+movespeed = 500
+cooldown = 0.5
+can_crit = true
+is_invulnerable = false

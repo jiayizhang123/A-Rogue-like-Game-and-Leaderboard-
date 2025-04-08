@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://db3ipdl3mdq21"]
+
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="1_f8mdr"]
+[ext_resource type="Texture2D" uid="uid://c2ddkhtt4gr8i" path="res://icon.svg" id="2_0g3p1"]
+[ext_resource type="PackedScene" uid="uid://cyxho6ktxqr3w" path="res://hboxes/hurtbox.tscn" id="3_xq63e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blaxf"]
+size = Vector2(130, 126)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_f8mdr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_blaxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0g3p1")
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_xq63e")]
