@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://br6lb1q4nxx5s"]
+[gd_scene load_steps=18 format=3 uid="uid://br6lb1q4nxx5s"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_mu7x3"]
 [ext_resource type="Texture2D" uid="uid://bandyvtb1cn2e" path="res://art/stagattack.png" id="2_rgyol"]
-[ext_resource type="Texture2D" uid="uid://bcd1ffafevh3c" path="res://art/1definitelyswordguy.png" id="2_x8a4t"]
 [ext_resource type="Texture2D" uid="uid://bylxj0koncb5e" path="res://art/stagmove.png" id="3_0gt4r"]
 [ext_resource type="PackedScene" uid="uid://cyxho6ktxqr3w" path="res://hboxes/hurtbox.tscn" id="3_fpndg"]
 [ext_resource type="Script" path="res://states/state_machine.gd" id="4_12ppc"]
@@ -84,11 +83,6 @@ sprite_frames = SubResource("SpriteFrames_yilgi")
 animation = &"attack"
 frame = 1
 frame_progress = 0.465276
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(387, 199)
-texture = ExtResource("2_x8a4t")
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_fpndg")]
 position = Vector2(382, 204)

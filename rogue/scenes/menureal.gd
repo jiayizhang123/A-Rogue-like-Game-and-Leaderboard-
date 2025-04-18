@@ -19,14 +19,16 @@ func testEsc():
 
 func _process(delta: float) -> void:
 	testEsc()
+	$VBoxContainer3/HBoxContainer/Label2.text = str(Global.score)
+	$VBoxContainer3/HBoxContainer2/Label.text = str(Global.coins)
 
 func _on_resume_pressed():
 	resume()
 
 func _on_options_pressed():
-	pass # Replace with function body.
-
-
+	resume()
+	get_tree().change_scene_to_file("res://scenes/optionsmenu.tscn")
+	
 func _on_abilities_pressed():
 	pass # Replace with function body.
 
