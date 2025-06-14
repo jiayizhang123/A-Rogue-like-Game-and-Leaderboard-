@@ -3,3 +3,6 @@
 # Software architecture:
 # Frontend: Godot 4.3
 # Backend: Python+SQLAlchemy
+
+![alt text](https://github.com/jiayizhang123/A-Rogue-like-Game-and-Leaderboard-/blob/main/demo1.png?raw=true)
+![alt text](https://github.com/jiayizhang123/A-Rogue-like-Game-and-Leaderboard-/blob/main/demo2.png?raw=true)
